@@ -102,6 +102,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "kub-at/php-simple-html-dom-parser": {
+        "version": "1.8.1"
+    },
     "monolog/monolog": {
         "version": "1.24.0"
     },
@@ -146,9 +149,6 @@
         "files": [
             "config/packages/sensio_framework_extra.yaml"
         ]
-    },
-    "sunra/php-simple-html-dom-parser": {
-        "version": "v1.5.2"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.0"
