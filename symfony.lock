@@ -147,6 +147,9 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "sunra/php-simple-html-dom-parser": {
+        "version": "v1.5.2"
+    },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.0"
     },
