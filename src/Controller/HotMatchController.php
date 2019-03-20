@@ -12,8 +12,6 @@ class HotMatchController extends AbstractController
      */
     public function index()
     {
-        return $this->render('hot_match/index.html.twig', [
-            'controller_name' => 'HotMatchController',
-        ]);
+        return $this->render('hot_match/index.html.twig');
     }
 }

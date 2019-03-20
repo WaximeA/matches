@@ -30,7 +30,7 @@ input[type="text"]:focus {
     margin-bottom: 100px
 }
 
-.matche-img {
+.match-img {
     border-radius: 100%;
     margin-bottom: 30px;
     width: 300px;
@@ -71,7 +71,7 @@ input[type="text"]:focus {
     padding: 40px
 }
 
-.matche-small-img {
+.match-small-img {
     border-radius: 100%;
     margin-bottom: 20px;
     width: 100px;
@@ -80,4 +80,55 @@ input[type="text"]:focus {
 
 .see-more {
     border-color: #606161;
+}
+
+
+/* HOT MATCH */
+.celebrity-div {
+    display: block;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#celebrity-left {
+    left: 15%;
+}
+
+#celebrity-right {
+    left: 85%;
+}
+
+.match-medium-img {
+    border-radius: 100%;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.celebrity-name {
+    color: #cc3f61;
+    font-size: 25px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+
+/* NEWS */
+
+#news-div {
+    height: 600px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+#news-div > .card {
+    margin: 30px
+}
+
+.news-source {
+    float: left;
 }
