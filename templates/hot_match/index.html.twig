@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HotMatchController!{% endblock %}
+
+{% block body %}
+    <section class="hero is-info is-medium has-text-centered" id="matches">
+        <div class="container" id="matches-body">
+            <h1 class="title">
+                Catégorie
+            </h1>
+            <p class="subtitle">
+                C'est un match!
+            </p>
+        </div>
+    </section>
+    {#<div class="columns is-vcentered">#}
+    {#<div class="column is-one-quarter">#}
+    {#<div class="celebrity-div" id="celebrity-left">#}
+    {#<img class="match-medium-img"  src="https://bulma.io/images/placeholders/128x128.png">#}
+    {#<p class="celebrity-name has-text-centered">Nom prénom</p>#}
+    {#</div>#}
+
+    {#</div>#}
+    {#<div class="column">#}
+    {#</div>#}
+    {#<div class="column is-one-quarter">#}
+    {#<div class="celebrity-div" id="celebrity-right">#}
+    {#<img class="match-medium-img"  src="https://bulma.io/images/placeholders/128x128.png">#}
+    {#<p class="celebrity-name has-text-centered">Nom prénom</p>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+    <div class="container">
+        <!-- Main container -->
+        <div class="level">
+            <!-- Left side -->
+            <div class="level-left">
+                <div class="level-item">
+                    <div class="column is-one-quarter">
+                        <div class="celebrity-div" id="celebrity-left">
+                            <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
+                            <p class="celebrity-name has-text-centered">Nom prénom</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side -->
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="column is-one-quarter">
+                        <div class="celebrity-div" id="celebrity-right">
+                            <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
+                            <p class="celebrity-name has-text-centered">Nom prénom</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half is-offset-one-quarter" id="news-div">
+                {# BOUCLE SUR LES ARTICLES #}
+                <div class="card">
+                    <header>
+                        <p class="card-header-title">
+                            Sponsorisé
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Titre article</h4>
+                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
+                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
+                                ut consequat semper viverra nam.</p>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Auteur</p>
+                                <p class="subtitle is-6">Source</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <header>
+                        <p class="card-header-title">
+                            Sponsorisé
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Titre article</h4>
+                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
+                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
+                                ut consequat semper viverra nam.</p>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Auteur</p>
+                                <p class="subtitle is-6">Source</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <header>
+                        <p class="card-header-title">
+                            Sponsorisé
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Titre article</h4>
+                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
+                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
+                                ut consequat semper viverra nam.</p>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Auteur</p>
+                                <p class="subtitle is-6">Source</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <header>
+                        <p class="card-header-title">
+                            Sponsorisé
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Titre article</h4>
+                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
+                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
+                                ut consequat semper viverra nam.</p>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Auteur</p>
+                                <p class="subtitle is-6">Source</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

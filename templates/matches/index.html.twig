@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Match{% endblock %}
+
+{% block body %}
+    <section class="hero is-info is-large has-text-centered" id="matches">
+        <div class="container" id="matches-body">
+            <h1 class="title">
+                Matches
+            </h1>
+            <p class="subtitle">
+                Saisissez le nom de deux célébrités
+            </p>
+            <div class="columns is-vcentered">
+                <div class="column has-text-centered">
+                    <div>
+                        <img class="match-img" src="https://bulma.io/images/placeholders/128x128.png">
+                        <input class="input" type="text" placeholder="Rechercher">
+                    </div>
+                </div>
+                <div class="column has-text-centered">
+                    <img class="flames" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/fire_1f525.png">
+                </div>
+                <div class="column has-text-centered">
+                    <div>
+                        <img class="match-img" src="https://bulma.io/images/placeholders/128x128.png">
+                        <input class="input" type="text" placeholder="Rechercher">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="match-button">
+        <a class="button" href="{{ path('hot_match') }}">Match!</a>
+    </div>
+    <section class="section has-text-white has-text-centered" id="history">
+        <div class="container" id="history-body">
+            <h1 class="title history-title has-text-white">
+                Les recherches récentes
+            </h1>
+            <div class="columns">
+                {# BOUCLE HISTORY #}
+                <div class="column has-text-centered">
+                    <div class="box history-box">
+                        <div class="columns">
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                        </div>
+                        <a class="button see-more">Voir plus</a>
+                    </div>
+                </div>
+                <div class="column has-text-centered">
+                    <div class="box history-box">
+                        <div class="columns">
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                        </div>
+                        <a class="button see-more">Voir plus</a>
+                    </div>
+                </div>
+                <div class="column has-text-centered">
+                    <div class="box history-box">
+                        <div class="columns">
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                            <div class="column">
+                                <img class="match-small-img" src="https://bulma.io/images/placeholders/128x128.png">
+                                <p>Nom prénom</p>
+                            </div>
+                        </div>
+                        <a class="button see-more">Voir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

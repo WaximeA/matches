@@ -1,0 +1,134 @@
+input[type="text"] {
+    background: transparent;
+    border: none;
+    color: white;
+    box-shadow: none;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    text-align: center;
+}
+
+input[type="text"]:focus {
+    box-shadow: none;
+}
+
+/* LANDING */
+#landing {
+    background-color: #1E2B4F
+}
+
+/* MATCHES */
+#matches {
+    background-color: #BD4A62
+}
+
+#matches-body {
+    margin-top: 100px;
+    margin-bottom: 100px
+}
+
+.match-img {
+    border-radius: 100%;
+    margin-bottom: 30px;
+    width: 300px;
+    height: 300px;
+}
+
+/* MATCH BUTTON */
+#match-button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#match-button a {
+    font-size: 30px;
+    width: 300px;
+    height: 100px;
+    border-radius: 57px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    color: #BD4A62;
+}
+
+/* HISTORY */
+#history {
+    background-color: #1E2B4F;
+}
+
+#history-body {
+    margin-top: 100px;
+}
+
+.history-title {
+    margin-bottom: 30px
+}
+
+.history-box {
+    padding: 40px
+}
+
+.match-small-img {
+    border-radius: 100%;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.see-more {
+    border-color: #606161;
+}
+
+
+/* HOT MATCH */
+.celebrity-div {
+    display: block;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#celebrity-left {
+    left: 15%;
+}
+
+#celebrity-right {
+    left: 85%;
+}
+
+.match-medium-img {
+    border-radius: 100%;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.celebrity-name {
+    color: #cc3f61;
+    font-size: 25px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+
+/* NEWS */
+
+#news-div {
+    height: 600px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+#news-div > .card {
+    margin: 30px
+}
+
+.news-source {
+    float: left;
+}
