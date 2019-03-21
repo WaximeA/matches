@@ -24,7 +24,8 @@ function addCelebrityImage(inputThis) {
         }).
         catch(error => console.error(error));
   } else {
-    currentMatchImage.attr('src', 'https://bulma.io/images/placeholders/128x128.png');
+    let currentWindow = window.location.origin;
+    currentMatchImage.attr('src', currentWindow + 'img/man-copy.png');
   }
 }
 
