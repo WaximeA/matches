@@ -17,9 +17,28 @@ input[type="text"]:focus {
 input[type="text"]::placeholder {
 }
 
+.previous {
+    font-size: 40px;
+    position: relative;
+    left: 20px;
+}
+
 /* LANDING */
 #landing {
     background-color: #1E2B4F
+}
+
+.partner-logo {
+    width: 150px;
+}
+
+.partner-div {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
 
 /* MATCHES */
@@ -27,9 +46,13 @@ input[type="text"]::placeholder {
     background-color: #BD4A62
 }
 
+#hot-matches-body {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 #matches-body {
-    margin-top: 100px;
-    margin-bottom: 100px
+    margin-bottom: 80px;
 }
 
 .match-img {
@@ -78,7 +101,7 @@ input[type="text"]::placeholder {
 }
 
 #history-body {
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .history-title {
@@ -124,6 +147,7 @@ input[type="text"]::placeholder {
 }
 
 .celebrity-name {
+    text-transform: uppercase;
     color: #cc3f61;
     font-size: 25px;
     font-weight: 300;
@@ -134,13 +158,26 @@ input[type="text"]::placeholder {
     text-align: center;
 }
 
+#do-you-like-it {
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cc3f61;
+}
+
 
 /* NEWS */
-
 #news-div {
-    height: 600px;
+    height:100vh;
     overflow-y:scroll;
     overflow-x:hidden;
+}
+
+.card a {
+    text-decoration: none;
 }
 
 #news-div > .card {

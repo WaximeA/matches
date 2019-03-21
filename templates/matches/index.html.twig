@@ -4,10 +4,10 @@
 
 {% block body %}
     <section class="hero is-info is-large has-text-centered" id="matches">
+        <h1 class="title">
+            <img src="{{ asset('img/logo.png') }}" alt="Matches logo" style="height:120px; padding-top: 30px">
+        </h1>
         <div class="container" id="matches-body">
-            <h1 class="title">
-                <img src="{{ asset('img/logo.png') }}" alt="Matches logo" style="height:120px;">
-            </h1>
             <br>
             <p class="subtitle">
                 Saisissez le nom de deux célébrités
@@ -49,7 +49,7 @@
         </div>
     </section>
     <div id="match-button">
-        <a class="button">Match trouvé!</a>
+        <a class="button">Résultats du match !</a>
     </div>
     <div id="none-match-button">
         <a class="button disabled">Aucun match...</a>
@@ -147,6 +147,5 @@
                 </li>
             </ul>
         </div>
-    </section>
     </section>
 {% endblock %}

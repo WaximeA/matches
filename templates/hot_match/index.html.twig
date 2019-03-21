@@ -7,13 +7,15 @@
 
 {% block body %}
     <section class="hero is-info is-medium has-text-centered" id="matches">
-        <div class="container" id="matches-body">
+        <div class="container" id="hot-matches-body">
+            <a href="{{ path('matches') }}" class="previous" style="float: left">&#8249;</a>
             <h1 class="title">
-                Catégorie
+                Résultats du match
             </h1>
             <p class="subtitle">
-                C'est un match!
+                Retrouvez tous les articles correspondants à votre recherche
             </p>
+        </div>
         </div>
     </section>
     <div class="container">
@@ -46,6 +48,11 @@
         </div>
     </div>
     <div class="container">
+        <div class="has-text-centered">
+            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;" data-options='{"pressed":"false"}'>
+            <img src="{{ asset('img/down.png') }}" style="height:38px" data-options='{"pressed":"false"}'>
+            <h4 id="do-you-like-it" style="padding-bottom: 30px;">Aimez vous ce match ?</h4>
+        </div>
         <div class="columns">
             <div class="column is-half is-offset-one-quarter" id="news-div">
                 {% for a in article %}
@@ -79,7 +86,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="subtitle is-4"><a
-                                                    href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
+                                                    href="{{ a.source.domain }}">{{ a.source.domain }}</a></p>
                                         <div class="tags has-addons">
                                             {% for n in a.ngrams %}
                                                 {% if loop.index < 4 %}
@@ -115,7 +122,7 @@
                                     </div>
                                     <div class="media-content">
                                         <p class="subtitle is-4"><a
-                                                    href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
+                                                    href="{{ a.source.domain }}">{{ a.source.domain }}</a></p>
                                         <div class="tags has-addons">
                                             {% for n in a.ngrams %}
                                                 {% if loop.index < 4 %}
