@@ -3,11 +3,6 @@ namespace App\Service;
 
 
 use GuzzleHttp\Client as Guzzle;
-use GuzzleHttp\Promise\Promise;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Stream;
-
 
 class ArticleService{
 
