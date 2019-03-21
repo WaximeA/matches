@@ -25,7 +25,7 @@ function addCelebrityImage(inputThis) {
         catch(error => console.error(error));
   } else {
     let currentWindow = window.location.origin;
-    currentMatchImage.attr('src', currentWindow + 'img/man-copy.png');
+    currentMatchImage.attr('src', currentWindow + '/img/man-copy.png');
   }
 }
 
