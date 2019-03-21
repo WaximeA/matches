@@ -73,6 +73,12 @@
 {#                        </p>#}
                     </header>
 {#                    {{ dump(a) }}#}
+
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ a.img_uri }}" alt="Placeholder image">
+                        </figure>
+                    </div>
                     <div class="card-content">
                         <div class="content">
                             <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
