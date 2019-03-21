@@ -60,13 +60,15 @@ function getOccurence(firstQuery, secondQuery) {
           hideElement(noMatchButton);
           showElement(flames);
           showElement(matchButton);
-          nbrOcuurence.show().html(data.articles_ids.length);
+          nbrOcuurence.show().html(data.articles_ids.length + ' article(s)');
           nbrOcuurence.attr('class', 'animated fadeIn delay-1s');
         } else {
           showElement(breakMatch);
           showElement(noMatchButton);
           hideElement(flames);
           hideElement(matchButton);
+          nbrOcuurence.attr('class', 'animated fadeOut');
+          nbrOcuurence.delay(1000).hide(0);
         }
       })
 }
