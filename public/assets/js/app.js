@@ -3,9 +3,10 @@ let inputData = input.data('options');
 let matchLeftInput = $('#match-left').find('input');
 let matchRightInput = $('#match-right').find('input');
 let matchButton = $('#match-button');
-let flames = $('.flames');
+let noMatchButton = $('#none-match-button');
+let flames = $('#flames');
+let breakMatch = $('#break-match');
 let timer = null;
-
 let nbrOcuurence = $('#occurence_number');
 
 const APIKEY = "0f5ac6fc2aee41ba90a195c209dadef7";
@@ -35,8 +36,10 @@ function displayMatchButton() {
   if (matchLeftInput.val() !== '' && matchRightInput.val() !== '') {
     getOccurence(matchLeftInput.val(), matchRightInput.val() )
   } else {
-    matchButton.attr('class', 'animated fadeOut');
-    matchButton.delay(1000).hide(0);
+    hideElement(breakMatch);
+    hideElement(noMatchButton);
+    hideElement(flames);
+    hideElement(matchButton);
   }
 }
 
@@ -52,17 +55,33 @@ function getOccurence(firstQuery, secondQuery) {
   fetch(url)
       .then(response => response.json())
       .then(data => {
-        if( data.articles_ids){
-          flames.show();
-          nbrOcuurence.show().html(data.articles_ids.length);
-          matchButton.show();
-          flames.attr('class', 'animated fadeIn delay-1s');
-          matchButton.attr('class', 'animated fadeIn delay-1s');
-
+        if(data.articles_ids){
+          hideElement(breakMatch);
+          hideElement(noMatchButton);
+          showElement(flames);
+          showElement(matchButton);
+          nbrOcuurence.show().html(data.articles_ids.length + ' article(s)');
+          nbrOcuurence.attr('class', 'animated fadeIn delay-1s');
+        } else {
+          showElement(breakMatch);
+          showElement(noMatchButton);
+          hideElement(flames);
+          hideElement(matchButton);
+          nbrOcuurence.attr('class', 'animated fadeOut');
+          nbrOcuurence.delay(1000).hide(0);
         }
       })
 }
 
+function showElement(element) {
+    element.show();
+    element.attr('class', 'animated fadeIn delay-1s');
+}
+
+function hideElement(element) {
+  element.attr('class', 'animated fadeOut');
+  element.delay(1000).hide(0);
+}
 
 function doStuff(inputThis) {
   addCelebrityImage(inputThis);
