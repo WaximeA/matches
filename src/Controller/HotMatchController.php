@@ -66,7 +66,6 @@ class HotMatchController extends AbstractController
                 array_push($array_articles, $articleService->getArticleById($id));
             }
 
-            dump($array_articles);
 
             return $this->render("hot_match/index.html.twig", [
                 "firstQuery" => $matches->getFirstQuery(),
@@ -76,7 +75,7 @@ class HotMatchController extends AbstractController
 
         }
 
-        return $this->render('matches/index.html.twig');
+        return $this->redirectToRoute("landing_index");
 
 
     }

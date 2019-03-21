@@ -7,6 +7,7 @@ let noMatchButton = $('#none-match-button');
 let flames = $('#flames');
 let breakMatch = $('#break-match');
 let timer = null;
+let nbrOcuurence = $('#occurence_number');
 
 const APIKEY = "0f5ac6fc2aee41ba90a195c209dadef7";
 
@@ -48,6 +49,8 @@ input.keydown(function(){
 });
 
 function getOccurence(firstQuery, secondQuery) {
+
+
   let url = 'https://api.ozae.com/gnw/uc/raw-search?q='+ firstQuery+'+'+secondQuery+'&date=20180101__20190101&key='+APIKEY;
   fetch(url)
       .then(response => response.json())
@@ -57,6 +60,7 @@ function getOccurence(firstQuery, secondQuery) {
           hideElement(noMatchButton);
           showElement(flames);
           showElement(matchButton);
+          nbrOcuurence.show().html(data.articles_ids.length);
         } else {
           showElement(breakMatch);
           showElement(noMatchButton);
@@ -83,10 +87,6 @@ function doStuff(inputThis) {
 
 
 matchButton.on('click', function (e) {
-   console.log(e);
-
     document.location.href = "http://localhost:8000/hot/match/"+matchLeftInput.val()+"/"+matchRightInput.val();
-
-
 });
 
