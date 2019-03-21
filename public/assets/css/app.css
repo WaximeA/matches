@@ -1,18 +1,20 @@
 input[type="text"] {
-    background: transparent;
+    height: 50px;
     border: none;
-    color: white;
-    box-shadow: none;
-    text-align: center;
-}
-
-input[type="text"]::placeholder {
-    color: white;
+    color: #1E2B4F;
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
 input[type="text"]:focus {
-    box-shadow: none;
+    -moz-box-shadow: 0 2px 3px rgba(30, 43, 79, 1);
+    -webkit-box-shadow: 0 2px 3px rgba(30, 43, 79, 1);
+    box-shadow: 0 2px 3px rgba(30, 43, 79, 1);
+}
+
+input[type="text"]::placeholder {
 }
 
 /* LANDING */
@@ -37,9 +39,13 @@ input[type="text"]:focus {
     height: 300px;
 }
 
+.flames {
+    display: none;
+}
+
 /* MATCH BUTTON */
 #match-button {
-    display: block;
+    display: none;
     position: absolute;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
