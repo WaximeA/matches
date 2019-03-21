@@ -61,6 +61,7 @@ function getOccurence(firstQuery, secondQuery) {
           showElement(flames);
           showElement(matchButton);
           nbrOcuurence.show().html(data.articles_ids.length);
+          nbrOcuurence.attr('class', 'animated fadeIn delay-1s');
         } else {
           showElement(breakMatch);
           showElement(noMatchButton);
