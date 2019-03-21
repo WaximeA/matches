@@ -55,93 +55,261 @@
         <a class="button disabled">Aucun match...</a>
     </div>
     <section class="section has-text-white has-text-centered" id="history">
-        <div class="container" id="history-body">
-            <h1 class="title history-title has-text-white">
-                Tendances
-            </h1>
-            <div class="columns">
-                {# BOUCLE HISTORY #}
-                <div class="column has-text-centered">
-                    <div class="box history-box">
-                        <span>75</span>
-                        <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
-                        <img src="{{ asset('img/down.png') }}" style="height:38px"><span>75</span>
-                        <div class="columns">
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/jackie.jpg') }}">
-                                <p>Jackie Chan</p>
+        <div id="tab-content">
+            {# LAST SEARCH #}
+            <div class="container tab-box" id="last-search">
+                <h1 class="title history-title has-text-white">
+                    Les dernières recherches
+                </h1>
+                <div class="columns">
+                    {# BOUCLE HISTORY #}
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>45</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>30</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/macron.jpg') }}">
+                                    <p>Emmanuel Macron</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/trump.jpg') }}">
+                                    <p>Donald Trump</p>
+                                </div>
                             </div>
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/macron.jpg') }}">
-                                <p>Emmanuel Macron</p>
-                            </div>
+                            <a class="button see-more">Résultats du match !</a>
                         </div>
-                        <a class="button see-more">Résultats du match !</a>
                     </div>
-                </div>
-                <div class="column has-text-centered">
-                    <div class="box history-box">
-                        <span>75</span>
-                        <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
-                        <img src="{{ asset('img/down.png') }}" style="height:38px"><span>75</span>
-                        <div class="columns">
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/kamal.jpg') }}">
-                                <p>Kamal Hennou</p>
-                            </div>
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/kylian.jpg') }}">
-                                <p>Kylian Mbappé</p>
-                            </div>
-                        </div>
-                        <a class="button see-more">Résultats du match !</a>
+                    <div class="column has-text-centered">
                     </div>
-                </div>
-                <div class="column has-text-centered">
-                    <div class="box history-box">
-                        <span>75</span>
-                        <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
-                        <img src="{{ asset('img/down.png') }}" style="height:38px"><span>75</span>
-                        <div class="columns">
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/kim.jpg') }}">
-                                <p>Kim Kardashian</p>
-                            </div>
-                            <div class="column">
-                                <img class="match-small-img" src="{{ asset('img/mimi.jpg') }}">
-                                <p>Mimi Mathy</p>
-                            </div>
-                        </div>
-                        <a class="button see-more">Résultats du match !</a>
+                    <div class="column has-text-centered">
                     </div>
                 </div>
             </div>
+            {# / LAST SEARCH #}
+            {# MOST POPULAR #}
+            <div class="container tab-box" id="most-popular">
+                <h1 class="title history-title has-text-white">
+                    Les tendances
+                </h1>
+                <div class="columns">
+                    {# BOUCLE HISTORY #}
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>763</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>122</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/jackie.jpg') }}">
+                                    <p>Jackie Chan</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/macron.jpg') }}">
+                                    <p>Emmanuel Macron</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>982</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>89</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kamal.jpg') }}">
+                                    <p>Kamal Hennou</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kylian.jpg') }}">
+                                    <p>Kylian Mbappé</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>789</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>200</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kim.jpg') }}">
+                                    <p>Kim Kardashian</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/mimi.jpg') }}">
+                                    <p>Mimi Mathy</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# / MOST POPULAR #}
+            {# MOST LIKED #}
+            <div class="container tab-box" id="most-liked">
+                <h1 class="title history-title has-text-white">
+                    Les mieux aimés
+                </h1>
+                <div class="columns">
+                    {# BOUCLE HISTORY #}
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>1893</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>20</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/villiani.jpg') }}">
+                                    <p>Cédric Villiani</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kim.jpg') }}">
+                                    <p>Kim Kardashian</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>1039</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>89</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kad.jpg') }}">
+                                    <p>Kad Merad</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/olivier.jpeg') }}">
+                                    <p>Olivier Baroux</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>2983</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>200</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/marty.jpg') }}">
+                                    <p>Marty McFly</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/doc.jpg') }}">
+                                    <p>Doc Brown</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# / MOST LIKE #}
+            {# LESS LIKED #}
+            <div class="container tab-box" id="less-liked">
+                <h1 class="title history-title has-text-white">
+                    Les moins aimés
+                </h1>
+                <div class="columns">
+                    {# BOUCLE HISTORY #}
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>920</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>1390</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/kevadams.jpg') }}">
+                                    <p>Kev Adams</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/nabilla.jpeg') }}">
+                                    <p>Nabilla Benattia</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>390</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>2000</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/cyril.jpg') }}">
+                                    <p>Cyril Hanouna</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/enora.jpg') }}">
+                                    <p>Enora Malagré</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="box history-box">
+                            <span>12</span>
+                            <img src="{{ asset('img/up.png') }}" style="height:38px; padding-right:35px;">
+                            <img src="{{ asset('img/down.png') }}" style="height:38px">
+                            <span>2830</span>
+                            <div class="columns">
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/morandini.jpeg') }}">
+                                    <p>Jean-Marc Morandini</p>
+                                </div>
+                                <div class="column">
+                                    <img class="match-small-img" src="{{ asset('img/gims.jpg') }}">
+                                    <p>Maitre Gims</p>
+                                </div>
+                            </div>
+                            <a class="button see-more">Résultats du match !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# / LESS LIKE #}
         </div>
-        <div class="tabs is-toggle is-fullwidth is-medium" style="padding-top:25px; text-align:center;
-  left: 0;
-  bottom: 0;
-  width: 100%;">
-            <ul>
-                <li style="background:#BD4A62">
-                    <a>
-
+        <div class="tabs is-toggle is-fullwidth is-medium" style="padding-top:25px; text-align:center; left: 0; bottom: 0; width: 100%;">
+            <ul class="tabs">
+                <li>
+                    <a href="#last-search">
                         <span class="has-text-white">Dernières recherches</span>
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a href="#most-popular">
                         <span class="has-text-white">+ Populaire</span>
                     </a>
                 </li>
                 <li>
-                    <a>
-
+                    <a href="#most-liked">
                         <span class="has-text-white">+ Aimés</span>
                     </a>
                 </li>
                 <li>
-                    <a>
-
+                    <a href="#less-liked">
                         <span class="has-text-white">- Aimés</span>
                     </a>
                 </li>

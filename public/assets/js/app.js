@@ -92,23 +92,13 @@ function doStuff(inputThis) {
 }
 
 
-matchButton.on('click', function (e) {
-    document.location.href = "http://localhost:8000/hot/match/"+matchLeftInput.val()+"/"+matchRightInput.val();
-});
-
-$('.tabgroup > div').hide();
-$('.tabgroup > div:first-of-type').show();
-$('.tabs a').click(function(e){
+$('.tab-box').hide();
+$('.tabs').find('a').on('click', function(e){
   e.preventDefault();
-  var $this = $(this),
-      tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
-      others = $this.closest('li').siblings().children('a'),
-      target = $this.attr('href');
-  others.removeClass('active');
-  $this.addClass('active');
-  $(tabgroup).children('div').hide();
-  $(target).show();
-
-})
+  $('.tabs').find('.current').removeClass('current');
+  $(this).addClass('current');
+  $(this.hash).show().siblings().hide();
+});
+$('.tab-box').first().show();
 
 
