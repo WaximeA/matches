@@ -16,18 +16,33 @@
                 <div class="column has-text-centered">
                     <div id="match-left">
                         <img class="match-img" id="match-img-left" src="{{ asset('img/man-copy.png') }}">
-                        <input class="input celebrity-input" type="text" placeholder="Ex: Emmanuel Macron" data-options='{"position":"left", "filled":"false"}'>
+                        <input class="input celebrity-input" type="text" placeholder="Ex: Emmanuel Macron"
+                               data-options='{"position":"left", "filled":"false"}'>
                     </div>
                 </div>
                 <div class="column has-text-centered">
+                    <div id="main-loader">
+                        <div class="lds-roller">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p>Recherche d'articles...</p>
+                    </div>
                     <img id="flames" src="{{ asset('img/flamme.png') }}">
                     <img id="break-match" src="{{ asset('img/allumette.png') }}">
-                    <b><p id="occurence_number" style="display: none;" ></p></b>
+                    <b><p id="occurence_number" style="display: none;"></p></b>
                 </div>
                 <div class="column has-text-centered">
                     <div id="match-right">
                         <img class="match-img" id="match-img-right" src="{{ asset('img/man-copy.png') }}">
-                        <input class="input celebrity-input" type="text" placeholder="Ex: Kim Kardashian" data-options='{"position":"right", "filled":"false"}'>
+                        <input class="input celebrity-input" type="text" placeholder="Ex: Kim Kardashian"
+                               data-options='{"position":"right", "filled":"false"}'>
                     </div>
                 </div>
             </div>
