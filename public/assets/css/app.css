@@ -39,25 +39,37 @@ input[type="text"]::placeholder {
     height: 300px;
 }
 
-.flames {
+#flames, #break-match {
     display: none;
 }
 
 /* MATCH BUTTON */
-#match-button {
+#match-button, #none-match-button {
     display: none;
     position: absolute;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
 
-#match-button a {
-    font-size: 30px;
+#match-button a, #none-match-button a {
+    font-size: 25px;
     width: 300px;
     height: 100px;
     border-radius: 57px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+#match-button a {
     color: #BD4A62;
+}
+
+.disabled {
+    color: white;
+    width: 412px;
+    height: 115px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #b4b4b4;
+    cursor: no-drop;
 }
 
 /* HISTORY */
