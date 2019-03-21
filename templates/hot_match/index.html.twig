@@ -2,6 +2,9 @@
 
 {% block title %}Hello HotMatchController!{% endblock %}
 
+{% set compteur = 0 %}
+
+
 {% block body %}
     <section class="hero is-info is-medium has-text-centered" id="matches">
         <div class="container" id="matches-body">
@@ -38,7 +41,7 @@
                 <div class="level-item">
                     <div class="column is-one-quarter">
                         <div class="celebrity-div" id="celebrity-left">
-                            <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
+                            <img class="match-medium-img" src="{{ firstAvatar }}">
                             <p class="celebrity-name has-text-centered">{{ firstQuery }}</p>
                         </div>
 
@@ -51,7 +54,7 @@
                 <div class="level-item">
                     <div class="column is-one-quarter">
                         <div class="celebrity-div" id="celebrity-right">
-                            <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
+                            <img class="match-medium-img" src="{{ secondAvatar }}">
                             <p class="celebrity-name has-text-centered">{{ secondQuery }}</p>
                         </div>
 
@@ -66,46 +69,103 @@
 
                 {% for a in article %}
 
-                <div class="card">
-                    <header>
-{#                        <p class="card-header-title">#}
-{#                            Sponsorisé#}
-{#                        </p>#}
-                    </header>
-{#                    {{ dump(a) }}#}
 
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="{{ a.img_uri }}" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
+
+
+                    {% if compteur == 3 %}
+                        {% set compteur = 0 %}
+                        <div>
+                            <img src="{{ asset('img/samsung-galaxy-s-10-pre-order-banner-new-french.png') }}" alt="">
+
                         </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-20x20">
-                                    <img src="https://www.google.com/s2/favicons?domain={{a.source.domain  }}" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="subtitle is-4"><a href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
-                                <div class="tags has-addons">
-                                    {% for n in a.ngrams  %}
-                                        {% if loop.index < 4 %}
-                                            <span class="tag">{{ n.ngram }}</span>
-                                            <span class="tag is-primary">{{ n.score }}</span>
-                                            &nbsp;
-                                        {% endif %}
-                                    {% endfor %}
-                                 
+                        
+                        {% elseif loop.index == 2 or loop.index == 3 %}
+
+                            <div class="card">
+
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="{{ a.img_uri }}" alt="Placeholder image">
+                                    </figure>
                                 </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p>
+                                            <small>Sponsorisé</small>
+                                        </p>
+                                        <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <figure class="image is-20x20">
+                                                <img src="https://www.google.com/s2/favicons?domain={{a.source.domain  }}" alt="Placeholder image">
+                                            </figure>
+                                        </div>
+                                        <div class="media-content">
+                                            <p class="subtitle is-4"><a href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
+                                            <div class="tags has-addons">
+                                                {% for n in a.ngrams  %}
+                                                    {% if loop.index < 4 %}
+                                                        <span class="tag">{{ n.ngram }}</span>
+                                                        <span class="tag is-primary">{{ n.score }}</span>
+                                                        &nbsp;
+                                                    {% endif %}
+                                                {% endfor %}
 
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+
+
+                        {% else %}
+
+                            <div class="card">
+{#                                <header>#}
+{#                                    <p class="card-header-title">#}
+{#                                        Sponsorisé#}
+{#                                    </p>#}
+{#                                </header>#}
+
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="{{ a.img_uri }}" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <figure class="image is-20x20">
+                                                <img src="https://www.google.com/s2/favicons?domain={{a.source.domain  }}" alt="Placeholder image">
+                                            </figure>
+                                        </div>
+                                        <div class="media-content">
+                                            <p class="subtitle is-4"><a href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
+                                            <div class="tags has-addons">
+                                                {% for n in a.ngrams  %}
+                                                    {% if loop.index < 4 %}
+                                                        <span class="tag">{{ n.ngram }}</span>
+                                                        <span class="tag is-primary">{{ n.score }}</span>
+                                                        &nbsp;
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                    {% endif %}
+
+                    {% set compteur = compteur + 1 %}
                 {% endfor %}
 
             </div>

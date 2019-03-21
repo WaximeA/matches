@@ -19,7 +19,6 @@ class ApiController extends AbstractController
      */
     public function getImages($nameInput)
     {
-
         // the name of the people for the query
         $search_query = $nameInput;
         //prepare the url for the query

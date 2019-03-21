@@ -23,6 +23,16 @@ class HotMatchController extends AbstractController
     {
         //retrieve cookies from the request
         $cookiesRequest = $request->cookies;
+
+        //retrieve cookies from the request
+        $cookiesRequest = $request->cookies;
+
+        //if the cookies contain the USER_TOKEN && exists
+        if (!$cookiesRequest->has('USER_TOKEN') && empty($user))
+        {
+            return $this->redirectToRoute("landing_index");
+        }
+
         // Search for a user with this cookies
         $user = $userRepository->findOneBy(["token" => $cookiesRequest->get("USER_TOKEN") ]);
 
@@ -67,9 +77,12 @@ class HotMatchController extends AbstractController
             }
 
 
+
             return $this->render("hot_match/index.html.twig", [
                 "firstQuery" => $matches->getFirstQuery(),
                 "secondQuery" => $matches->getSecondQuery(),
+                "firstAvatar" => $articleService->getAvatarFromName($matches->getFirstQuery()),
+                "secondAvatar" => $articleService->getAvatarFromName($matches->getSecondQuery()),
                 "article" => $array_articles,
             ]);
 

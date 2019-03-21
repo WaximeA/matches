@@ -6,6 +6,7 @@ let matchButton = $('#match-button');
 let noMatchButton = $('#none-match-button');
 let flames = $('#flames');
 let breakMatch = $('#break-match');
+let loader = $('#main-loader');
 let timer = null;
 let nbrOcuurence = $('#occurence_number');
 
@@ -22,7 +23,6 @@ function addCelebrityImage(inputThis) {
     fetch('/api/getImages/' + query).
         then(response => response.json()).
         then(data => {
-          console.log(inputThis.data( "options" ));
           currentMatchImage.attr('src', data.data);
         }).
         catch(error => console.error(error));
@@ -34,12 +34,16 @@ function addCelebrityImage(inputThis) {
 
 function displayMatchButton() {
   if (matchLeftInput.val() !== '' && matchRightInput.val() !== '') {
+    loader.show();
     getOccurence(matchLeftInput.val(), matchRightInput.val() )
   } else {
+    loader.hide();
+    hideElement(loader);
     hideElement(breakMatch);
     hideElement(noMatchButton);
     hideElement(flames);
     hideElement(matchButton);
+    hideElement(nbrOcuurence);
   }
 }
 
@@ -61,26 +65,25 @@ function getOccurence(firstQuery, secondQuery) {
           showElement(flames);
           showElement(matchButton);
           nbrOcuurence.show().html(data.articles_ids.length + ' article(s)');
-          nbrOcuurence.attr('class', 'animated fadeIn delay-1s');
+          nbrOcuurence.attr('class', 'animated fadeIn');
         } else {
           showElement(breakMatch);
           showElement(noMatchButton);
           hideElement(flames);
           hideElement(matchButton);
-          nbrOcuurence.attr('class', 'animated fadeOut');
-          nbrOcuurence.delay(1000).hide(0);
+          hideElement(nbrOcuurence);
         }
       })
 }
 
 function showElement(element) {
     element.show();
-    element.attr('class', 'animated fadeIn delay-1s');
+    element.attr('class', 'animated fadeIn');
 }
 
 function hideElement(element) {
   element.attr('class', 'animated fadeOut');
-  element.delay(1000).hide(0);
+  element.hide();
 }
 
 function doStuff(inputThis) {
