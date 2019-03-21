@@ -6,6 +6,8 @@ let matchButton = $('#match-button');
 let flames = $('.flames');
 let timer = null;
 
+let nbrOcuurence = $('#occurence_number');
+
 const APIKEY = "0f5ac6fc2aee41ba90a195c209dadef7";
 
 
@@ -51,6 +53,7 @@ function getOccurence(firstQuery, secondQuery) {
       .then(data => {
         if( data.articles_ids){
           flames.show();
+          nbrOcuurence.show().html(data.articles_ids.length);
           matchButton.show();
           flames.attr('class', 'animated fadeIn delay-1s');
           matchButton.attr('class', 'animated fadeIn delay-1s');
@@ -67,10 +70,6 @@ function doStuff(inputThis) {
 
 
 matchButton.on('click', function (e) {
-   console.log(e);
-
     document.location.href = "http://localhost:8000/hot/match/"+matchLeftInput.val()+"/"+matchRightInput.val();
-
-
 });
 
