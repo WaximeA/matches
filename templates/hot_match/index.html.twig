@@ -56,11 +56,13 @@
                         </div>
                     {% elseif loop.index == 2 or loop.index == 3 %}
                         <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="{{ a.img_uri }}" alt="Placeholder image">
-                                </figure>
-                            </div>
+                            {% if a.img_uri %}
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="{{ a.img_uri }}" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                            {% endif %}
                             <div class="card-content">
                                 <div class="content">
                                     <p>
@@ -93,11 +95,13 @@
                         </div>
                     {% else %}
                         <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="{{ a.img_uri }}" alt="Placeholder image">
-                                </figure>
-                            </div>
+                            {% if a.img_uri %}
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="{{ a.img_uri }}" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                            {% endif %}
                             <div class="card-content">
                                 <div class="content">
                                     <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
