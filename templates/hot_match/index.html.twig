@@ -39,7 +39,7 @@
                     <div class="column is-one-quarter">
                         <div class="celebrity-div" id="celebrity-left">
                             <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
-                            <p class="celebrity-name has-text-centered">Nom prénom</p>
+                            <p class="celebrity-name has-text-centered">{{ firstQuery }}</p>
                         </div>
 
                     </div>
@@ -52,7 +52,7 @@
                     <div class="column is-one-quarter">
                         <div class="celebrity-div" id="celebrity-right">
                             <img class="match-medium-img" src="https://bulma.io/images/placeholders/128x128.png">
-                            <p class="celebrity-name has-text-centered">Nom prénom</p>
+                            <p class="celebrity-name has-text-centered">{{ secondQuery }}</p>
                         </div>
 
                     </div>
@@ -63,111 +63,51 @@
     <div class="container">
         <div class="columns">
             <div class="column is-half is-offset-one-quarter" id="news-div">
-                {# BOUCLE SUR LES ARTICLES #}
+
+                {% for a in article %}
+
                 <div class="card">
                     <header>
-                        <p class="card-header-title">
-                            Sponsorisé
-                        </p>
+{#                        <p class="card-header-title">#}
+{#                            Sponsorisé#}
+{#                        </p>#}
                     </header>
+{#                    {{ dump(a) }}#}
+
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ a.img_uri }}" alt="Placeholder image">
+                        </figure>
+                    </div>
                     <div class="card-content">
                         <div class="content">
-                            <h4>Titre article</h4>
-                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
-                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
-                                ut consequat semper viverra nam.</p>
+                            <h4><a href="{{ a.url }}">{{ a.name }}</a></h4>
                         </div>
                         <div class="media">
                             <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                <figure class="image is-20x20">
+                                    <img src="https://www.google.com/s2/favicons?domain={{a.source.domain  }}" alt="Placeholder image">
                                 </figure>
                             </div>
                             <div class="media-content">
-                                <p class="title is-4">Auteur</p>
-                                <p class="subtitle is-6">Source</p>
+                                <p class="subtitle is-4"><a href="{{ a.source.subdomain }}">{{ a.source.domain }}</a></p>
+                                <div class="tags has-addons">
+                                    {% for n in a.ngrams  %}
+                                        {% if loop.index < 4 %}
+                                            <span class="tag">{{ n.ngram }}</span>
+                                            <span class="tag is-primary">{{ n.score }}</span>
+                                            &nbsp;
+                                        {% endif %}
+                                    {% endfor %}
+                                 
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <header>
-                        <p class="card-header-title">
-                            Sponsorisé
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4>Titre article</h4>
-                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
-                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
-                                ut consequat semper viverra nam.</p>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">Auteur</p>
-                                <p class="subtitle is-6">Source</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <header>
-                        <p class="card-header-title">
-                            Sponsorisé
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4>Titre article</h4>
-                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
-                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
-                                ut consequat semper viverra nam.</p>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">Auteur</p>
-                                <p class="subtitle is-6">Source</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <header>
-                        <p class="card-header-title">
-                            Sponsorisé
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4>Titre article</h4>
-                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
-                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac
-                                ut consequat semper viverra nam.</p>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">Auteur</p>
-                                <p class="subtitle is-6">Source</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </div>
