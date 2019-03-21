@@ -5,19 +5,23 @@ namespace App\Controller;
 use App\Entity\History;
 use App\Repository\HistoryRepository;
 use App\Repository\UserRepository;
+use App\Service\ArticleService;
 use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use GuzzleHttp\Client as Guzzle;
+
 
 class HotMatchController extends AbstractController
 {
+
+
     /**
      * @Route("/hot/match/{firstQuery}/{secondQuery}", name="hot_match_process")
      */
     public function process_query($firstQuery,$secondQuery, Request $request, UserRepository $userRepository, UserService $userServicen)
     {
-
         //retrieve cookies from the request
         $cookiesRequest = $request->cookies;
         // Search for a user with this cookies
@@ -47,17 +51,28 @@ class HotMatchController extends AbstractController
     /**
      * @Route("/hot-matches/{uuid}", name="hot_match_page")
      */
-    public function index($uuid, HistoryRepository $historyRepository)
+    public function index($uuid, HistoryRepository $historyRepository, ArticleService $articleService)
     {
+
+        $array_articles = [];
 
         $matches = $historyRepository->findOneBy(["uuid" => $uuid ]);
 
         if ($matches){
 
+            $ids = $articleService->getArticleIds($matches->getFirstQuery(), $matches->getSecondQuery());
+
+
+            foreach ($ids as $id){
+                array_push($array_articles, $articleService->getArticleById($id));
+            }
+
+            dump($array_articles);
 
             return $this->render("hot_match/index.html.twig", [
                 "firstQuery" => $matches->getFirstQuery(),
                 "secondQuery" => $matches->getSecondQuery(),
+                "article" => $array_articles,
             ]);
 
         }
