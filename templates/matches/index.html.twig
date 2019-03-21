@@ -20,7 +20,8 @@
                     </div>
                 </div>
                 <div class="column has-text-centered">
-                    <img class="flames" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/fire_1f525.png">
+                    <img id="flames" src="{{ asset('img/flamme.png') }}">
+                    <img id="break-match" src="{{ asset('img/allumette.png') }}">
                 </div>
                 <div class="column has-text-centered">
                     <div id="match-right">
@@ -32,7 +33,10 @@
         </div>
     </section>
     <div id="match-button">
-            <a class="button">Match!</a>
+        <a class="button">Match trouvé!</a>
+    </div>
+    <div id="none-match-button">
+        <a class="button disabled">Aucun match...</a>
     </div>
     <section class="section has-text-white has-text-centered" id="history">
         <div class="container" id="history-body">

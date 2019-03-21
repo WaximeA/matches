@@ -3,7 +3,9 @@ let inputData = input.data('options');
 let matchLeftInput = $('#match-left').find('input');
 let matchRightInput = $('#match-right').find('input');
 let matchButton = $('#match-button');
-let flames = $('.flames');
+let noMatchButton = $('#none-match-button');
+let flames = $('#flames');
+let breakMatch = $('#break-match');
 let timer = null;
 
 const APIKEY = "0f5ac6fc2aee41ba90a195c209dadef7";
@@ -33,8 +35,10 @@ function displayMatchButton() {
   if (matchLeftInput.val() !== '' && matchRightInput.val() !== '') {
     getOccurence(matchLeftInput.val(), matchRightInput.val() )
   } else {
-    matchButton.attr('class', 'animated fadeOut');
-    matchButton.delay(1000).hide(0);
+    hideElement(breakMatch);
+    hideElement(noMatchButton);
+    hideElement(flames);
+    hideElement(matchButton);
   }
 }
 
@@ -44,22 +48,33 @@ input.keydown(function(){
 });
 
 function getOccurence(firstQuery, secondQuery) {
-
-
   let url = 'https://api.ozae.com/gnw/uc/raw-search?q='+ firstQuery+'+'+secondQuery+'&date=20180101__20190101&key='+APIKEY;
   fetch(url)
       .then(response => response.json())
       .then(data => {
-        if( data.articles_ids){
-          flames.show();
-          matchButton.show();
-          flames.attr('class', 'animated fadeIn delay-1s');
-          matchButton.attr('class', 'animated fadeIn delay-1s');
-
+        if(data.articles_ids){
+          hideElement(breakMatch);
+          hideElement(noMatchButton);
+          showElement(flames);
+          showElement(matchButton);
+        } else {
+          showElement(breakMatch);
+          showElement(noMatchButton);
+          hideElement(flames);
+          hideElement(matchButton);
         }
       })
 }
 
+function showElement(element) {
+    element.show();
+    element.attr('class', 'animated fadeIn delay-1s');
+}
+
+function hideElement(element) {
+  element.attr('class', 'animated fadeOut');
+  element.delay(1000).hide(0);
+}
 
 function doStuff(inputThis) {
   addCelebrityImage(inputThis);
