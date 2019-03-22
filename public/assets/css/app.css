@@ -17,9 +17,28 @@ input[type="text"]:focus {
 input[type="text"]::placeholder {
 }
 
+.previous {
+    font-size: 40px;
+    position: relative;
+    left: 20px;
+}
+
 /* LANDING */
 #landing {
     background-color: #1E2B4F
+}
+
+.partner-logo {
+    width: 150px;
+}
+
+.partner-div {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
 
 /* MATCHES */
@@ -27,9 +46,13 @@ input[type="text"]::placeholder {
     background-color: #BD4A62
 }
 
+#hot-matches-body {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 #matches-body {
-    margin-top: 100px;
-    margin-bottom: 100px
+    margin-bottom: 80px;
 }
 
 .match-img {
@@ -39,25 +62,37 @@ input[type="text"]::placeholder {
     height: 300px;
 }
 
-.flames {
+#flames, #break-match {
     display: none;
 }
 
 /* MATCH BUTTON */
-#match-button {
+#match-button, #none-match-button {
     display: none;
     position: absolute;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
 
-#match-button a {
-    font-size: 30px;
+#match-button a, #none-match-button a {
+    font-size: 25px;
     width: 300px;
     height: 100px;
     border-radius: 57px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+#match-button a {
     color: #BD4A62;
+}
+
+.disabled {
+    color: white;
+    width: 412px;
+    height: 115px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #b4b4b4;
+    cursor: no-drop;
 }
 
 /* HISTORY */
@@ -66,7 +101,7 @@ input[type="text"]::placeholder {
 }
 
 #history-body {
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .history-title {
@@ -112,6 +147,7 @@ input[type="text"]::placeholder {
 }
 
 .celebrity-name {
+    text-transform: uppercase;
     color: #cc3f61;
     font-size: 25px;
     font-weight: 300;
@@ -122,13 +158,26 @@ input[type="text"]::placeholder {
     text-align: center;
 }
 
+#do-you-like-it {
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cc3f61;
+}
+
 
 /* NEWS */
-
 #news-div {
-    height: 600px;
+    height:100vh;
     overflow-y:scroll;
     overflow-x:hidden;
+}
+
+.card a {
+    text-decoration: none;
 }
 
 #news-div > .card {
@@ -137,4 +186,94 @@ input[type="text"]::placeholder {
 
 .news-source {
     float: left;
+}
+
+/* LOADER */
+#main-loader {
+    display: none;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+}
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -3px 0 0 -3px;
+}
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+}
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+}
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+}
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+}
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+}
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+}
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+}
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+}
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
