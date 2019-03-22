@@ -91,6 +91,10 @@ function doStuff(inputThis) {
   displayMatchButton();
 }
 
+matchButton.on('click', function (e) {
+  document.location.href = "http://localhost:8000/hot/match/"+matchLeftInput.val()+"/"+matchRightInput.val();
+});
+
 
 $('.tab-box').hide();
 $('.tabs').find('a').on('click', function(e){
