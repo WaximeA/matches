@@ -52,7 +52,7 @@ class LandingController extends AbstractController
 
 
         // Create new cookies for start storing the session's user
-        $cookie = Cookie::create("USER_TOKEN",$token, strtotime('now + 10 minutes') );
+        $cookie = Cookie::create("USER_TOKEN",$token, strtotime('now + 30 minutes') );
         // attach render to response
         $response = $this->render('landing/index.html.twig');
         //attach cookie to response
