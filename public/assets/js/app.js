@@ -9,6 +9,7 @@ let breakMatch = $('#break-match');
 let loader = $('#main-loader');
 let timer = null;
 let nbrOcuurence = $('#occurence_number');
+let currentWindow = window.location.origin;
 
 const APIKEY = "0f5ac6fc2aee41ba90a195c209dadef7";
 
@@ -27,7 +28,6 @@ function addCelebrityImage(inputThis) {
         }).
         catch(error => console.error(error));
   } else {
-    let currentWindow = window.location.origin;
     currentMatchImage.attr('src', currentWindow + '/img/man-copy.png');
   }
 }
@@ -106,3 +106,12 @@ $('.tabs').find('a').on('click', function(e){
 $('.tab-box').first().show();
 
 
+$('#thumbs-up').on('click', function (e) {
+  $(this).attr('src', currentWindow + '/img/up-full.png');
+  $('#thumbs-down').attr('src', currentWindow + '/img/down.png');
+});
+
+$('#thumbs-down').on('click', function (e) {
+  $(this).attr('src', currentWindow + '/img/down-full.png');
+  $('#thumbs-up').attr('src', currentWindow + '/img/up.png');
+});
